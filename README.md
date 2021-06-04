@@ -17,7 +17,7 @@ Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilita
 3. Chia para Windows 1.1.x que lo puedes descargar de Chia Network (https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL)
 
 ## Instalación
-  Solamente descargar los scripts a una carpeta son 3 en total
+  Solamente descargar el .zip y descomprimir los scripts a una carpeta, son 3 archivos PS1 en total.
   1. _addplots.ps1_
   2. _addplotsParallel.ps1_
   3. _sendEmail.ps1_

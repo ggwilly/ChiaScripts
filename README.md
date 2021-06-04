@@ -1,10 +1,10 @@
 # ChiaScripts
 
-Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creacion de plots ejecutandolos desde PowerShell.
+Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creacion de plots.
 
 ## Instalacion
 
-  Solamente bajate los scripts a una carpeta 
+  Solamente descargar los scripts a una carpeta
 
 ## Requisitos
   

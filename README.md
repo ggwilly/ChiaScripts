@@ -23,26 +23,26 @@ Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilita
   3. _sendEmail.ps1_
 
 ## Uso
-La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 scripts con cualquier editor de texto ej. **notepad** y cambiar el/los parámetros como veremos a continuación. Fue pensado para un usuario que no conoce sobre comandos de PowerShell y que quiere automatizar en forma rápida la creación de plots.
+La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 scripts con cualquier editor de texto ej. **notepad** y cambiar el o los parámetros como veremos a continuación. Fue pensado para un usuario que no conoce sobre comandos de PowerShell y que quiere automatizar en forma rápida la creación de plots.
 
 ### **addPlots.ps1**
    
-   En general modificamos la cabecera donde vamos a encontrar comentados los parametros que se pueden cambiar. Para ejecutar N plots en forma secuencial usamos el parámetro [$plotsNumber = 1]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
+   En general modificamos la cabecera donde vamos a encontrar comentados los parámetros que se pueden cambiar. Para ejecutar N plots en forma secuencial usamos el parámetro [$plotsNumber = N]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
    
    ![imagen](https://user-images.githubusercontent.com/23438179/120731702-8472a880-c4ba-11eb-9a2e-b852a476a7ba.png)
 
-   Cada parametro se encuentra explicado con su comentario correspondiente.
-   Luego de modificar los parametros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
+   Cada parámetro se encuentra explicado con su comentario correspondiente.
+   Luego de modificar los parámetros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
    
    
 ### **addPlotsParallel.ps1**
    
-   De la misma forma que el script anterior, modificamos la cabecera donde vamos a encontrar comentados los parametros que se pueden cambiar. Para ejecutar N plots en paralelo se usará el parámetro [$parallelTasks = N]. También podemos especificar un tiempo en minutos para hacer una espera entre las ejecuciones en paralelo ej. cambiando [$delayMinutes = 120] cada plot tendra una demora de 2hs previo a la ejecucion de la proxima tarea. Podemos tambien especificar la cantidad de plots que se correran en forma secuencial de las tareas ya ejectucadas en paralelo con el parámetro [$secuencialPlots = N]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
+   De la misma forma que el script anterior, modificamos la cabecera donde vamos a encontrar comentados los parámetros que se pueden cambiar. Para ejecutar N plots en paralelo se usará el parámetro [$parallelTasks = N]. También podemos especificar un tiempo en minutos para hacer una espera entre las ejecuciones en paralelo ej. cambiando [$delayMinutes = 120] cada plot tendra una demora de 2hs previo a la ejecucion de la proxima tarea. Podemos tambien especificar la cantidad de plots que se correran en forma secuencial de las tareas ya ejectucadas en paralelo con el parámetro [$secuencialPlots = N]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
    
    ![imagen](https://user-images.githubusercontent.com/23438179/120732710-21821100-c4bc-11eb-87a7-57d26b8b3177.png)
 
-   Cada parametro se encuentra explicado con su comentario correspondiente.
-   Luego de modificar los parametros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
+   Cada parámetro se encuentra explicado con su comentario correspondiente.
+   Luego de modificar los parámetros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
 
 ### **sendEmail.ps1**
    

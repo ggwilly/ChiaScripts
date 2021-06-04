@@ -1,5 +1,4 @@
 # ChiaScripts
-
 Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creación de plots para Chia blockchain.
    Para obtener información sobre el proyecto Chia, visitar (https://www.chia.net/)
 
@@ -24,13 +23,12 @@ Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilita
   3. _sendEmail.ps1_
 
 ## Uso
-La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 scripts y configurarlos como veremos a continuación.
-Fue pensado para un usuario que no conoce sobre comandos de PowerShell y que quiere automatizar en forma rapida la creación de plots.
+La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 scripts con cualquier editor de texto ej. **notepad** y cambiar el/los parámetros como veremos a continuación. Fue pensado para un usuario que no conoce sobre comandos de PowerShell y que quiere automatizar en forma rápida la creación de plots.
 
-## **addPlots.ps1**
+### **addPlots.ps1**
    
    Para ejecutar 1 o N plots en forma secuencial.
-   Modificamos la cabecera donde vamos a encontrar comentados todos los parametros que se pueden modificar del script, como se muestra en la siguiente imagen:
+   Modificamos la cabecera donde vamos a encontrar comentados los parametros que se pueden modificar, como se muestra en la siguiente imagen:
    
    ![imagen](https://user-images.githubusercontent.com/23438179/120731702-8472a880-c4ba-11eb-9a2e-b852a476a7ba.png)
 
@@ -38,30 +36,30 @@ Fue pensado para un usuario que no conoce sobre comandos de PowerShell y que qui
    Luego de modificar los parametros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
    
    
-## **addPlotsParallel.ps1**
+### **addPlotsParallel.ps1**
    
    Para ejecutar 1 o N plots en paralelo.
-   Modificamos la cabecera donde vamos a encontrar comentados todos los parametros que se pueden modificar del script, como se muestra en la siguiente imagen:
+   Modificamos la cabecera donde vamos a encontrar comentados los parametros que se pueden modificar, como se muestra en la siguiente imagen:
    
    ![imagen](https://user-images.githubusercontent.com/23438179/120732710-21821100-c4bc-11eb-87a7-57d26b8b3177.png)
 
    Como puede verse cada parametro se encuentra explicado con su comentario correspondiente.
    Luego de modificar los parametros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
 
-## **sendEmail.ps1**
+### **sendEmail.ps1**
    
-   Este archivo no se ejecuta, solo se debe modificar su cabecera para poner los paramatros de nuestros servidor de correo
-      
+   Este archivo no se ejecuta, solo se debe modificar su cabecera para poner los paramatros de nuestros servidor de correo SMPT.
+
    ![imagen](https://user-images.githubusercontent.com/23438179/120734113-b6860980-c4be-11eb-9c92-4a560cdfdb0f.png)
 
    En caso de no tener idea como configurar estos parametros, para evitar un error al momento de la ejecución del script, usar el parámetro **$sendEmail = "N"** en **addPlots.ps1** y **addPlotsParallel.ps1**
 
 
 ## Capturas de pantalla
-   > Ejemplo de ejecución addPlot.ps1, en el titulo de la ventana tipo de proceso que ejecutamos [secuencial] y los parametros mas relevantes, dentro del script tambien al comienza se muestran esa informacion.
+   > Ejemplo de ejecución addPlot.ps1, en el titulo de la ventana muestra tipo de proceso que ejecutamos [secuencial] y los parametros mas relevantes, al comenzar tambien dentro del script se muestra esta información.
    ![imagen](https://user-images.githubusercontent.com/23438179/120737155-f00d4380-c4c3-11eb-8570-6cef953f403f.png)
 
-   > El resumen que nos llega por Email, en caso de configurarlo correctamente.
+   > El resumen que nos llegará por Email.
    ![imagen](https://user-images.githubusercontent.com/23438179/120735336-d0285080-c4c0-11eb-9657-75b0c09b43e3.png)
    
    > Ejemplo de como quedan guardados los archivos de Log.

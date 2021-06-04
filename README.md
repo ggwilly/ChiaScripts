@@ -1,31 +1,26 @@
 # ChiaScripts
 
-Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creación de plots de la Chia blockchain.
+Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creación de plots para Chia blockchain.
 
-## Que ventajas ofrecen los scripts
-
+## Que ventajas ofrecen estos scripts
 * Se automatiza el proceso de ploteado directamente con dos scripts (addPlots.ps1 y addPlotsParallel.ps1)
 * Todos los procesos en paralelo se ejecuta en 1 sola ventana haciendo mas sencillo el seguimiento.
-* No requiere modificar el script cuando una nueva version de chia salga a futuro.
+* No requiere modificar el script cuando salga una nueva version de chia a futuro.
 * Envia un email una vez finalizado el proceso a una casilla de correo que configuremos (sendEmail.ps1).
 * Guarda un log de ejecución del proceso completo, si se requiere.
 * Guarda un log de resumen de ejecución, si se requiere.
+* El resumen de ejecución calcula el tiempo total y promedio de un plot para hacer comparaciones rapidas del rendimiento de nuestro hardware
 
+## Requisitos
+1. Windows 10
+2. PowerShell Core 7.x que lo puedes descargade de Microsoft (https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1)
+3. Chia para Windows 1.1.x que lo puedes descargar de Chia Network (https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL)
 
 ## Instalación
-
   Solamente descargar los scripts a una carpeta son 3 en total
   + addplots.ps1
   + addplotsParallel.ps1
   + sendEmail.ps1
-
-## Requisitos
-  
-1. Windows 10
-2. PowerShell Core 7.x que lo puedes descargade de [Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1)
-3. Chia para windows 1.1.x Chia Network(https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL)
-4. 
-
 
 ## Uso
 

@@ -1,7 +1,7 @@
 # ChiaScripts
 
 Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creación de plots para Chia blockchain.
-   Para obtener informacion sobre el proyecto Chia, visitar (https://www.chia.net/)
+   Para obtener información sobre el proyecto Chia, visitar (https://www.chia.net/)
 
 ## Que ventajas ofrecen estos scripts
 * Se automatiza el proceso de ploteado directamente con dos scripts (**addPlots.ps1** y **addPlotsParallel.ps1**)

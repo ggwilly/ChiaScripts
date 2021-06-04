@@ -27,12 +27,17 @@ Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilita
 Simplemente editar la cabecera de los 2 scripts y poner los parametros que sean necesarios.
 Fue pensado para un usuario que no conoce sobre comandos de PowerShell.
 
-**addplots**
+**addPlots.ps1**
    
    Para ejecutar 1 o N plots juntos en forma secuencial.
-   Modificamos la cabecera del archivo como se muestra en la siguiente imagen
+   Modificamos la cabecera donde vamos a encontrar comentados todos los parametros que se pueden modificar del script, como se muestra en la siguiente imagen:
    
+   ![imagen](https://user-images.githubusercontent.com/23438179/120731702-8472a880-c4ba-11eb-9a2e-b852a476a7ba.png)
 
+   Cada parametro se encuentra explicado con un comentario. 
+   Luego modificamos los parametros necesarios, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
+   
+   
 
 
 

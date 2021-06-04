@@ -8,7 +8,7 @@ Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilita
 
 ## Requisitos
   
-  PowerShell Core 7.x que lo puedes descargade de 
+  PowerShell Core 7.x que lo puedes descargade de [Docs.Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1)
 
 
 ## Usage

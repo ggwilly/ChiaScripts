@@ -56,9 +56,16 @@ Fue pensado para un usuario que no conoce sobre comandos de PowerShell y que qui
 
    En caso de no tener idea como configurar estos parametros, para evitar un error al momento de la ejecución del script, usar el parámetro **$sendEmail = "N"** en **addPlots.ps1** y **addPlotsParallel.ps1**
 
-## Ejemplos
+## Capturas de pantalla
+   * Ejemplo de comienzo de ejecución addPlot.ps1, en el titulo de la ventana y dentro del scripts al inciarse nos muestra el tipo de proceso que ejecutamos [paralelo] y los parametros mas relevantes
+   ![imagen](https://user-images.githubusercontent.com/23438179/120737155-f00d4380-c4c3-11eb-8570-6cef953f403f.png)
+
+   
    * El resumen que nos llega por Email, en caso de configurarlo correctamente.
    ![imagen](https://user-images.githubusercontent.com/23438179/120735336-d0285080-c4c0-11eb-9657-75b0c09b43e3.png)
+   
+   * Ejemplo de como quedan guardados los archivos de Log.
+   
 
    
 

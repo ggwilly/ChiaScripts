@@ -27,4 +27,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Licencia
-[GPL.v3](https://choosealicense.com/licenses/gpl-3.0/)
+[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)

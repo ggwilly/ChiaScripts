@@ -1,14 +1,15 @@
 # ChiaScripts
 
-Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creacion de plots.
+Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilitar la creacion de plots ejecutandolos desde PowerShell.
 
-## Installation
+## Instalacion
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+  Solamente bajate los scripts a una carpeta 
 
-```bash
-pip install foobar
-```
+## Requisitos
+  
+  PowerShell Core 7.x que lo puedes descargade de 
+
 
 ## Usage
 
@@ -20,10 +21,10 @@ foobar.pluralize('goose') # returns 'geese'
 foobar.singularize('phenomena') # returns 'phenomenon'
 ```
 
-## Contributing
+## Contribuciones
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License
-[GPL.v3](https://choosealicense.com/licenses/gpl-3.0/)
+## Licencia
+[GPL.v3] (https://choosealicense.com/licenses/gpl-3.0/)

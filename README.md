@@ -27,9 +27,9 @@ La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 s
 
 ### **addPlots.ps1**
    
-   En general modificamos la cabecera donde vamos a encontrar comentados los parámetros que se pueden cambiar. Para ejecutar N plots en forma secuencial usamos el parámetro [$plotsNumber = N]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
+   En general modificamos la cabecera del script donde vamos a encontrar comentados los parámetros que podemos cambiar. Para ejecutar N plots en forma secuencial usamos el parámetro [$plots = N]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
    
-   ![imagen](https://user-images.githubusercontent.com/23438179/120731702-8472a880-c4ba-11eb-9a2e-b852a476a7ba.png)
+   ![imagen](https://user-images.githubusercontent.com/23438179/120945075-158d8d80-c70e-11eb-8322-033470ec1087.png)
 
    Cada parámetro se encuentra explicado con su comentario correspondiente.
    Luego de modificar los parámetros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**
@@ -37,9 +37,10 @@ La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 s
    
 ### **addPlotsParallel.ps1**
    
-   De la misma forma que el script anterior, modificamos la cabecera donde vamos a encontrar comentados los parámetros que se pueden cambiar. Para ejecutar N plots en paralelo se usará el parámetro [$parallelTasks = N]. También podemos especificar un tiempo en minutos para hacer una espera entre las ejecuciones en paralelo ej. cambiando [$delayMinutes = 120] cada plot tendra una demora de 2hs previo a la ejecucion de la proxima tarea. Podemos tambien especificar la cantidad de plots que se correran en forma secuencial de las tareas ya ejectucadas en paralelo con el parámetro [$secuencialPlots = N]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
+   De la misma forma que el script anterior, modificamos la cabecera del script donde vamos a encontrar comentados los parámetros que podemos cambiar. Para ejecutar N plots en paralelo se usará el parámetro [$parallelPlots = N]. También podemos especificar un tiempo en minutos para hacer una espera entre las ejecuciones en paralelo ej. cambiando [$delayMinutes = 120] cada plot tendra una demora de 2hs previo a la ejecucion de la próximo plot. Podemos tambien especificar la cantidad de plots que se correran en cola de los plots ya ejectucadas en paralelo con el parámetro [$queue = N]. En la siguiente imagen se muestran todos los parámetros con sus comentarios y valores por defecto.
    
-   ![imagen](https://user-images.githubusercontent.com/23438179/120732710-21821100-c4bc-11eb-87a7-57d26b8b3177.png)
+   ![imagen](https://user-images.githubusercontent.com/23438179/120945203-892f9a80-c70e-11eb-9a19-3246e4383f02.png)
+
 
    Cada parámetro se encuentra explicado con su comentario correspondiente.
    Luego de modificar los parámetros que necesitemos, guardamos el archivo y finalmente lo ejecutamos con 2 botón del mouse sobre el archivo, **"Ejecutar con PowerShell 7"**

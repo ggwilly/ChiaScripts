@@ -49,9 +49,9 @@ La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 s
    
    Este archivo no se ejecuta, solo se debe modificar su cabecera para poner los paramatros de nuestros servidor de correo SMPT.
 
-   ![imagen](https://user-images.githubusercontent.com/23438179/120734113-b6860980-c4be-11eb-9c92-4a560cdfdb0f.png)
+   ![imagen](https://user-images.githubusercontent.com/23438179/120945491-9600be00-c70f-11eb-8c0e-6dabf8c5a3ee.png)
 
-   En caso de no tener idea como configurar estos parametros, para evitar un error al momento de la ejecución del script, usar el parámetro **$sendEmail = "N"** en **addPlots.ps1** y **addPlotsParallel.ps1**
+   En caso de no tener idea como configurar estos parametros, para evitar un error al momento de la ejecución del script, usar el parámetro **$sendEmail = "N"** en los scripts **addPlots.ps1** y **addPlotsParallel.ps1**
 
 
 ## Capturas de pantalla

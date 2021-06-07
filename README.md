@@ -4,7 +4,7 @@ Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilita
 
 ## Que ventajas ofrecen estos scripts
 * Se automatiza el proceso de ploteado directamente con dos scripts (**addPlots.ps1** y **addPlotsParallel.ps1**)
-* Todos los procesos en paralelo se ejecutan en 1 sola ventana haciendo mas sencillo el seguimiento.
+* Todos los procesos en paralelo se ejecutan en 1 sola ventana de PowerShell haciendo mas sencillo el seguimiento.
 * No requiere modificar el script cuando salga una nueva versión de chia.
 * Envia un email una vez finalizado el proceso a una casilla de correo que configuremos (**sendEmail.ps1**).
 * Guarda un log de ejecución del proceso completo, si se requiere.

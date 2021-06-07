@@ -13,7 +13,7 @@ Chia Scripts es un conjunto de scripts desarrollados en PowerShell para facilita
 
 ## Requisitos
 1. Windows 10
-2. PowerShell Core 7.x que lo puedes descargade de Microsoft (https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1)
+2. PowerShell Core 7.x que lo puedes descargar de sitio de Microsoft (https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1)
 3. Chia para Windows 1.1.x que lo puedes descargar de Chia Network (https://github.com/Chia-Network/chia-blockchain/wiki/INSTALL)
 
 ## Instalación

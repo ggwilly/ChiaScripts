@@ -2,7 +2,7 @@
 # © 2021    | github.com/ggwilly |  GPL v3.0 #
 #-- Parametros CHIA -------------------------#
 $plotType            = 32                    # Parametro -k es el tamaño del plot que se va a crear. Default = 32
-$memoryMiB           = 3500                  # Parametro -b es la cantidad de RAM en MiB que usara el proceso individual de ploteo. Default = 3389
+$memoryMiB           = 8192                  # Parametro -b es la cantidad de RAM en MiB que usara el proceso individual de ploteo. Default = 3389
 $threads             = 6                     # Parametro -r es el numero de hilos que usara el proceso de ploteo. Default = 2
 $bucketSize          = 128                   # Parametro -u es el tamaño del bucket. Default = 128
 $temporaryDir        = "D:\Temp.Chia"        # Parametro -d es la ubicacion de la carpeta temporal. No es necesario que este creada
@@ -10,9 +10,8 @@ $destinationDir      = "D:\"                 # Parametro -t es el carpeta final 
 $logDir              = "D:\Logs"             # Carpeta donde quedaran los logs del proceso. No es necesario que este creada
 $parallelPlots       = 2                     # Indica cuantos plots en paralelo son ejecutados por el proceso. Default = 2
 $queue               = 1                     # Por cada plot en paralelo especifica cuantos plots en cola se ejecutaran. Default = 1
-$delayMinutes        = 200                   # Tiempo de espera en minutos entre procesos paralelos (0 = sin espera)
+$delayMinutes        = 90                    # Tiempo de espera en minutos entre procesos paralelos (0 = sin espera)
 #-- Parametros adicionales ------------------#
-$saveLog             = "Y"                   # Indica si el log del proceso completo se guardara en la carpeta de logs. Default "Y"
 $saveLogSummary      = "N"                   # Indica si el log de resumen del proceso se guardara en la carpeta de log. Default "N"
 $sendEmail           = "Y"                   # Indica si se enviará un correo electronico con el resumen de proceso al terminar. Para modificar los parametros de envio de correo modificar en el archivo "sendEmail.ps1". Default "N"
 #--------------------------------------------#
@@ -71,7 +70,7 @@ $executionTime = Measure-Command {
 			-n $using:queue `
 			-t $using:temporaryDir `
 			-d $using:destinationDir `
-		| where { $using:saveLog -eq "Y" } | tee "${using:logDir}\Chia_plot_${date}_parallel(${_}).log"
+		| tee "${using:logDir}\Chia_plot_${date}_parallel(${_}).log"
 	} -ThrottleLimit $parallelPlots
 | Out-Default}
 $endTime = Get-Date -Format "dd/MM/yyyy HH:mm:ss"

@@ -10,9 +10,8 @@ $destinationDir      = "D:\"                 # Parametro -t es el carpeta final 
 $logDir              = "D:\Logs"             # Carpeta donde quedaran los logs del proceso. No es necesario que este creada
 $plots         		 = 1                     # Indica cuantos plots secuenciales son ejecutadas. Default = 1
 #-- Parametros adicionales ------------------#
-$saveLog             = "N"                   # Indica si el log del proceso completo se guardara en la carpeta de logs. Default "Y"
 $saveLogSummary      = "Y"                   # Indica si el log de resumen del proceso se guardara en la carpeta de log. Default "N"
-$sendEmail           = "Y"                   # Indica si se enviará un correo electronico con el resumen de proceso al terminar. Para modificar los parametros de envio de correo modificar en el archivo "sendEmail.ps1". Default "N"
+$sendEmail           = "N"                   # Indica si se enviará un correo electronico con el resumen de proceso al terminar. Para modificar los parametros de envio de correo modificar en el archivo "sendEmail.ps1". Default "N"
 #--------------------------------------------#
 
 #Cambiamos a la carpeta de chia
@@ -63,7 +62,7 @@ $executionTime = Measure-Command {
 			-n 1 `
 			-t $temporaryDir `
 			-d $destinationDir `
-		| where { $saveLog -eq "Y" } | tee "${logDir}\Chia_plot_${date}_secuencial(${_}).log"
+		| tee "${logDir}\Chia_plot_${date}_secuencial(${_}).log"
 	}
 | Out-Default}
 $endTime = Get-Date -Format "dd/MM/yyyy HH:mm:ss"

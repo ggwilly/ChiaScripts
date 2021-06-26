@@ -124,7 +124,8 @@ if ($saveLogSummary -eq "Y") {
 
 #Envia el correo
 if ($sendEmail -eq "Y") {
-	.\sendEmail.ps1 -body $summaryInfo
+	$subject     = "CHIA resumen proceso - ejecutado: ${startTime}"
+	.\sendEmail.ps1 -body $summaryInfo -subject $subject
 }
 
 #Notificar fin del proceso con varios beeps, finalmente espera salida con ENTER

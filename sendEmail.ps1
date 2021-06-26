@@ -1,5 +1,6 @@
 param (
 	 $body = $(throw "parametro requerido.")
+	,$subject = $(throw "parametro requerido.")
 	,$time = $(throw "parametro requerido.")
 )
 
@@ -8,7 +9,7 @@ $from        = "sender@yourdomain.com"
 $to          = "recipient1@domain.com", "recipient2@domain.com"
 #$Cc         = "boss@domain.com"
 #$Attachment = "C:\temp\attach.txt"
-$subject     = "CHIA resumen proceso - ejecutado: ${time}"
+#$subject     = "CHIA resumen proceso - ejecutado: ${time}"
 $SMTPServer  = "mail.yourdomain.com"
 $SMTPPort    = "25"
 $credential  = ([pscredential]::new($from,(ConvertTo-SecureString -String 'password' -AsPlainText -Force)))

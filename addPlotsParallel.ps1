@@ -1,10 +1,10 @@
 #--------------------------------------------#
-# © 2021    | github.com/ggwilly |  GPL v3.0 #
+# Â© 2021    | github.com/ggwilly |  GPL v3.0 #
 #-- Parametros CHIA -------------------------#
-$plotType            = 32                    # Parametro -k es el tamaño del plot que se va a crear. Default = 32
+$plotType            = 32                    # Parametro -k es el tamaÃ±o del plot que se va a crear. Default = 32
 $memoryMiB           = 8192                  # Parametro -b es la cantidad de RAM en MiB que usara el proceso individual de ploteo. Default = 3389
 $threads             = 6                     # Parametro -r es el numero de hilos que usara el proceso de ploteo. Default = 2
-$bucketSize          = 128                   # Parametro -u es el tamaño del bucket. Default = 128
+$bucketSize          = 128                   # Parametro -u es el tamaÃ±o del bucket. Default = 128
 $temporaryDir        = "D:\Temp.Chia"        # Parametro -d es la ubicacion de la carpeta temporal. No es necesario que este creada
 $destinationDir      = "D:\"                 # Parametro -t es el carpeta final donde se copiara finalmene el plot. No es necesario que este creada
 $logDir              = "D:\Logs"             # Carpeta donde quedaran los logs del proceso. No es necesario que este creada
@@ -13,7 +13,7 @@ $queue               = 1                     # Por cada plot en paralelo especif
 $delayMinutes        = 30                    # Tiempo de espera en minutos entre procesos paralelos (0 = sin espera)
 #-- Parametros adicionales ------------------#
 $saveLogSummary      = "N"                   # Indica si el log de resumen del proceso se guardara en la carpeta de log. Default "N"
-$sendEmail           = "Y"                   # Indica si se enviará un correo electronico con el resumen de proceso al terminar. Para modificar los parametros de envio de correo modificar en el archivo "sendEmail.ps1". Default "N"
+$sendEmail           = "Y"                   # Indica si se enviarÃ¡ un correo electronico con el resumen de proceso al terminar. Para modificar los parametros de envio de correo modificar en el archivo "sendEmail.ps1". Default "N"
 #--------------------------------------------#
 
 #Cambiamos a la carpeta de chia
@@ -124,7 +124,7 @@ if ($saveLogSummary -eq "Y") {
 
 #Envia el correo
 if ($sendEmail -eq "Y") {
-	.\sendEmail.ps1 -body $summaryInfo -time $startTime
+	.\sendEmail.ps1 -body $summaryInfo
 }
 
 #Notificar fin del proceso con varios beeps, finalmente espera salida con ENTER

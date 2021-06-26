@@ -1,7 +1,7 @@
 param (
 	 $body = $(throw "parametro requerido.")
 	,$subject = $(throw "parametro requerido.")
-	,$time = $(throw "parametro requerido.")
+	,$time
 )
 
 #-- Parametros SMPT -------------------------#

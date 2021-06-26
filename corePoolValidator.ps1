@@ -62,7 +62,7 @@ Start-Sleep 10
 $template = @"
 Se ha detenido la aplicacion de Core Pool en uno de los nodos fecha/hora: ${time}
 "@
-$subject = "NOTIFICACION DE CORE POOL: se detuvo el farmeo en uno de los Nodos"
+$subject = "NOTIFICACION DE CORE POOL: se detuvo el farmeo en uno de los nodos"
 .\sendEmail.ps1 -body $template -subject $subject
 
 ""

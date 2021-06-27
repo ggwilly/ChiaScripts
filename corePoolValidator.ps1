@@ -1,4 +1,9 @@
-# Detecta la caida de un nodo y envia un email informando #
+#--------------------------------------------#
+# © 2021    | github.com/ggwilly |  GPL v3.0 #
+# Detecta la caida de un nodo y envia un     #
+# email informando                           #
+#--------------------------------------------#
+
 $headers = @{
 	"Cache-Control"="no-cache"
 }

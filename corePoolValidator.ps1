@@ -54,8 +54,8 @@ while ($true) #un largo largo tiempo
 		Write-Host "Unknow"
 	}
 
-	#Si el estado es Offline durante 100 segundos notifico
-	if ($countOffline -eq 0)
+	#Si el estado es Offline durante 5 minutos, notifico
+	if ($countOffline -lt 0)
 	{
 		Write-Host "Enviando Email..."
 		break

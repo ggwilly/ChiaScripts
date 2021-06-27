@@ -1,7 +1,9 @@
-# ENVIA UN EMAIL CUANDO CORE POOL SE DESCONECTA #
+# Detecta la caida de un nodo y envia un email informando #
 $headers = @{
 	"Cache-Control"="no-cache"
 }
+
+# User & Pass del portal de CorePool (https://core-pool.com/)
 $body = @{
 	username = 'username'
 	password = 'password'

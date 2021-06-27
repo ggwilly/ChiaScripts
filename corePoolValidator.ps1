@@ -3,8 +3,8 @@ $headers = @{
 	"Cache-Control"="no-cache"
 }
 $body = @{
-	username = 'pass'
-	password = 'contraseña'
+	username = 'username'
+	password = 'pass'
 }
 
 $urlLogin = "https://core-pool.com/login"

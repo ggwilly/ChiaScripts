@@ -3,8 +3,8 @@ $headers = @{
 	"Cache-Control"="no-cache"
 }
 $body = @{
-	username = 'FabricaChia'
-	password = 'chiaNet99'
+	username = 'pass'
+	password = 'contraseña'
 }
 
 $urlLogin = "https://core-pool.com/login"

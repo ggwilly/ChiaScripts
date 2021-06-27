@@ -4,7 +4,7 @@ $headers = @{
 }
 $body = @{
 	username = 'username'
-	password = 'pass'
+	password = 'password'
 }
 
 $urlLogin = "https://core-pool.com/login"

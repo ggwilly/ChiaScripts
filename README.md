@@ -52,8 +52,7 @@ La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 s
    ![imagen](https://user-images.githubusercontent.com/23438179/120945491-9600be00-c70f-11eb-8c0e-6dabf8c5a3ee.png)
 
    En caso de no tener idea como configurar estos parametros, para evitar un error al momento de la ejecución del script, usar el parámetro **$sendEmail = "N"** en los scripts **addPlots.ps1** y **addPlotsParallel.ps1**
-
-
+   
 ## Capturas de pantalla
    > Ejemplo de ejecución addPlot.ps1, en el titulo de la ventana muestra tipo de proceso que ejecutamos [secuencial] y los parametros mas relevantes, al comenzar tambien dentro del script se muestra esta información.
    ![imagen](https://user-images.githubusercontent.com/23438179/120737155-f00d4380-c4c3-11eb-8570-6cef953f403f.png)
@@ -63,6 +62,12 @@ La configuracion es sencilla, solo es cuestión de editar la cabecera de los 3 s
    
    > Ejemplo de como quedan guardados los archivos de Log.
    ![imagen](https://user-images.githubusercontent.com/23438179/120737660-dcaea800-c4c4-11eb-935d-45ca504efff9.png)
+
+## **corePoolValidator.ps1**
+
+   Este script valida el estado de los nodos del sitio CorePool (https://core-pool.com), y cuando detecta que un nodo se ha caido, nos envia un Email notificandonos.
+   
+   ![imagen](https://user-images.githubusercontent.com/23438179/123550004-bab1e980-d741-11eb-96fc-fac7a6e11444.png)
       
 ## Contribuciones
 Cualquier sugerencia para mejorar el código será bienvenida.

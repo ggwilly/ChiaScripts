@@ -25,6 +25,7 @@ catch {}
 while ($true) #un largo largo tiempo
 {
 	$content = Invoke-RestMethod $urlDashboard -WebSession $webSession 
+	
 	$farmers = ([regex]::Matches($content, $patternSearch)).count
 	
 	if (([regex]::Matches($content, $patternOnline)).count -eq $farmers)
@@ -32,16 +33,13 @@ while ($true) #un largo largo tiempo
 		$countOffline = 30
 		$time = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Online :)"
-		Write-Host "CorePool Online | ${time}"
+		Write-Host "CorePool Online  |  ${time}"
 	}
 	elseif (([regex]::Matches($content, $patternOffline)).count -gt 0)
 	{
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Offline :("
-		Write-Host "CorePool Offline | Email Notification In: ${countOffline}"
+		Write-Host "CorePool Offline |  Email Notification In: ${countOffline}"
 		$countOffline--
-		
-		#$payload = [PSCustomObject]@{content = "<a:redalert:835994375556300822>  Farmer Is Offline  <a:redalert:835994375556300822>"} | ConvertTo-Json
-		#Invoke-RestMethod -Method Post -ContentType 'application/json'-Body $payload -uri your discord webhook address
 	}
 	else
 	{

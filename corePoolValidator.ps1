@@ -21,6 +21,11 @@ $time = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
 $patternSearch = '<td class="farmer_token"'
 $patternOnline = ">Online<"
 $patternOffline = ">Offline<"
+$desconectado = $null
+$desconectadoAnt = $false
+$desconocido = $false
+$desconectadoCiclo = 0
+$notify = ""
 
 try
 {
@@ -32,42 +37,65 @@ catch {}
 while ($true) #un largo largo tiempo
 {
 	$content = Invoke-RestMethod $urlDashboard -WebSession $webSession 
-	
 	$farmers = ([regex]::Matches($content, $patternSearch)).count
 	
 	if (([regex]::Matches($content, $patternOnline)).count -eq $farmers)
 	{
 		$countOffline = 30
+		$desconectado = $false
 		$time = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Online :)"
 		Write-Host "CorePool Online  |  ${time}"
 	}
 	elseif (([regex]::Matches($content, $patternOffline)).count -gt 0)
 	{
+		$desconectado = $true
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Offline :("
 		Write-Host "CorePool Offline |  Email Notification In: ${countOffline}"
 		$countOffline--
 	}
 	else
 	{
+		$desconocido = $true
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Unknow :|"
 		Write-Host "Unknow"
 	}
+	
+	#logica para detectar los ciclos de desconexion
+	if ($desconectado -eq $false -And $desconectadoAnt -eq $true)
+	{
+		$desconectadoCiclo++
+	}
+	$desconectadoAnt = $desconectado
 
 	#Si el estado es Offline durante 5 minutos, notifico
 	if ($countOffline -lt 0)
 	{
 		Write-Host "Enviando Email..."
+		$notify = "Se detuvo el farmeo en uno de los nodos, levantar todas las Apps del nodo y CorePool en orden"
 		break
 	}
+	if ($desconectadoCiclo -ge 5) #Si se conecta y reconecta 5 veces
+	{
+		Write-Host "Enviando Email..."
+		$notify = "Hubo conexiones y reconexiones seguidas, Core Pool no esta caido pero es necesario reiniciarlo, levantar todas las Apps del nodo y CorePool en orden"
+		break
+	}
+	if ($desconocido -eq $true) #Si hubo un error desconocido
+	{
+		Write-Host "Enviando Email..."
+		$notify = "Hubo un error desconocido, levantar todas las Apps del nodo y CorePool en orden"
+		break
+	}
+	
 	Start-Sleep 10
 }
 Start-Sleep 10
 
 $template = @"
-Se ha detenido la aplicacion de Core Pool en uno de los nodos fecha/hora: ${time}
+${notify} fecha/hora: ${time}
 "@
-$subject = "NOTIFICACION DE CORE POOL: se detuvo el farmeo en uno de los nodos"
+$subject = "NOTIFICACION DE CORE POOL: ${notify}"
 .\sendEmail.ps1 -body $template -subject $subject
 
 ""

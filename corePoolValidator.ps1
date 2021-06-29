@@ -21,10 +21,10 @@ $time = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
 $patternSearch = '<td class="farmer_token"'
 $patternOnline = ">Online<"
 $patternOffline = ">Offline<"
-$desconectado = $null
-$desconectadoAnt = $false
+$disconected = $null
+$disconectedPre = $false
 $desconocido = $false
-$desconectadoCiclo = 0
+$disconectedCicle = 0
 $notify = ""
 
 try
@@ -42,14 +42,14 @@ while ($true) #un largo largo tiempo
 	if (([regex]::Matches($content, $patternOnline)).count -eq $farmers)
 	{
 		$countOffline = 30
-		$desconectado = $false
+		$disconected = $false
 		$time = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Online :)"
 		Write-Host "CorePool Online  |  ${time}"
 	}
 	elseif (([regex]::Matches($content, $patternOffline)).count -gt 0)
 	{
-		$desconectado = $true
+		$disconected = $true
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Offline :("
 		Write-Host "CorePool Offline |  Email Notification In: ${countOffline}"
 		$countOffline--
@@ -62,11 +62,11 @@ while ($true) #un largo largo tiempo
 	}
 	
 	#logica para detectar los ciclos de desconexion
-	if ($desconectado -eq $false -And $desconectadoAnt -eq $true)
+	if ($disconected -eq $false -And $disconectedPre -eq $true)
 	{
-		$desconectadoCiclo++
+		$disconectedCicle++
 	}
-	$desconectadoAnt = $desconectado
+	$disconectedPre = $disconected
 
 	#Si el estado es Offline durante 5 minutos, notifico
 	if ($countOffline -lt 0)
@@ -75,7 +75,7 @@ while ($true) #un largo largo tiempo
 		$notify = "Se detuvo el farmeo en uno de los nodos, levantar todas las Apps del nodo y CorePool en orden"
 		break
 	}
-	if ($desconectadoCiclo -ge 5) #Si se conecta y reconecta 5 veces
+	if ($disconectedCicle -ge 5) #Si se conecta y reconecta 5 veces
 	{
 		Write-Host "Enviando Email..."
 		$notify = "Hubo conexiones y reconexiones seguidas, Core Pool no esta caido pero es necesario reiniciarlo, levantar todas las Apps del nodo y CorePool en orden"
@@ -88,7 +88,7 @@ while ($true) #un largo largo tiempo
 		break
 	}
 	
-	Start-Sleep 10
+	Start-Sleep 5
 }
 Start-Sleep 10
 

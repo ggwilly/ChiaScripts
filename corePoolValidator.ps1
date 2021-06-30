@@ -16,14 +16,14 @@ $body = @{
 
 $urlLogin = "https://core-pool.com/login"
 $urlDashboard = "https://core-pool.com/dashboard"
-$countOffline = 30
+$countOffline = 60
 $time = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
 $patternSearch = '<td class="farmer_token"'
 $patternOnline = ">Online<"
 $patternOffline = ">Offline<"
 $disconected = $null
 $disconectedPre = $false
-$desconocido = $false
+$unknown = $false
 $disconectedCicle = 0
 $notify = ""
 
@@ -41,7 +41,7 @@ while ($true) #un largo largo tiempo
 	
 	if (([regex]::Matches($content, $patternOnline)).count -eq $farmers)
 	{
-		$countOffline = 30
+		$countOffline = 60
 		$disconected = $false
 		$time = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Online :)"
@@ -56,7 +56,7 @@ while ($true) #un largo largo tiempo
 	}
 	else
 	{
-		$desconocido = $true
+		$unknown = $true
 		$host.ui.RawUI.WindowTitle = " [CorePool Validator] | Unknow :|"
 		Write-Host "Unknow"
 	}
@@ -72,19 +72,19 @@ while ($true) #un largo largo tiempo
 	if ($countOffline -lt 0)
 	{
 		Write-Host "Enviando Email..."
-		$notify = "Se detuvo el farmeo en uno de los nodos, levantar todas las Apps del nodo y CorePool en orden"
+		$notify = "Se detuvo el farmeo en uno de los nodos"
 		break
 	}
 	if ($disconectedCicle -ge 5) #Si se conecta y reconecta 5 veces
 	{
 		Write-Host "Enviando Email..."
-		$notify = "Hubo conexiones y reconexiones seguidas, Core Pool no esta caido pero es necesario reiniciarlo, levantar todas las Apps del nodo y CorePool en orden"
+		$notify = "Hubo conexiones y reconexiones seguidas, revisar si los forks de las ALTCOINS estan sincronizando bien"
 		break
 	}
-	if ($desconocido -eq $true) #Si hubo un error desconocido
+	if ($unknown -eq $true) #Si hubo un error desconocido
 	{
 		Write-Host "Enviando Email..."
-		$notify = "Hubo un error desconocido, levantar todas las Apps del nodo y CorePool en orden"
+		$notify = "Hubo un error desconocido"
 		break
 	}
 	

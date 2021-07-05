@@ -22,6 +22,7 @@ $patternOffline = ">Offline<"
 
 DO 
 {
+	cls
 	$countOffline = 30
 	$disconectedCicle = 0
 	$disconected = $null
@@ -98,7 +99,9 @@ DO
 	
 	$subject = "NOTIFICACION DE CORE POOL: ${notify}"
 	.\sendEmail.ps1 -body $template -subject $subject
-
+	
+	""
+	$subject
 	""
 	#Notificar fin del proceso con varios beeps, finalmente hace el prompt para salir o continuar
 	[console]::beep(800,500); start-sleep 3; 
@@ -106,6 +109,6 @@ DO
 	[console]::beep(800,500); [console]::beep(800,500); [console]::beep(800,500); start-sleep 3; 
 	[console]::beep(800,500); [console]::beep(800,500); [console]::beep(800,500); [console]::beep(800,500); 
 
-	$choice = $Host.UI.PromptForChoice("", "Desea continuar con la validación?", ("&Sí", "&No"), 1)
-	
+	$choice = $Host.UI.PromptForChoice("", "Desea continuar con la validación?", ("&Sí", "&No"), 0)
+
 } until ($choice -eq 1)
